@@ -1,3 +1,5 @@
 #!/bin/bash
-python3 -m compileall $PYFILE -b
-Give feedback
+import py_compile
+source_file = os.environ["PYFILE"]
+output_file = my_main.pyc + "c"
+py_compile.compile(source_file, output_file)
