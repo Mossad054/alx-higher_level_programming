@@ -2,6 +2,7 @@
 """Defines  matrix multiplication function using the NumPy."""
 import numpy as np
 
+
 def lazy_matrix_mul(m_a, m_b):
     """Returns multiplication of two matrices.
 
