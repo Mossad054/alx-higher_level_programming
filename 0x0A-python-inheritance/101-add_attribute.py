@@ -1,24 +1,17 @@
 #!/usr/bin/python3
-
-"""importing 9-Rectangle"""
-
-Rectangle = __import__('9-rectangle').Rectangle
-
-"""Write a class square that inherites from rectangle"""
+"""Defines a function that adds attributes to objects."""
 
 
-class Square(Rectangle):
-    """A subclass of Rectangle"""
-    def __init__(self, size):
-        """initialize private attribute size and validate it"""
-        self.integer_validator("size", size)
-        super().__init__(size, size)
-        self.__size = size
+def add_attribute(obj, att, value):
+    """Add a new attribute to an object if possible.
 
-    def area(self):
-        """returns area of a square"""
-        return self.__size ** 2
-
-    def __str__(self):
-        """Return and prints the squar earea"""
-        return str("[Square] {:d}/{:d}".format(self.__size, self.__size))
+    Args:
+        obj (any): The object to add an attribute to.
+        att (str): The name of the attribute to add to obj.
+        value (any): The value of att.
+    Raises:
+        TypeError: If the attribute cannot be added.
+    """
+    if not hasattr(obj, "__dict__"):
+        raise TypeError("can't add new attribute")
+    setattr(obj, att, value)
