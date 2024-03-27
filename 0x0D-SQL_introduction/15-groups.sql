@@ -1,6 +1,6 @@
--- Lists all records of the table second_table having a name value in my MySQL server.
--- Records are ordered by descending score.
-SELECT `score`, `name`
+-- Lists the number of records with the same score in the table second_table in my MySQL server.
+-- Records are ordered by descending count.
+SELECT `score`, COUNT(*) AS `number`
 FROM `second_table`
-WHERE `name` != ""
-ORDER BY `score` DESC
+GROUP BY `score`
+ORDER BY `number` DESC;
