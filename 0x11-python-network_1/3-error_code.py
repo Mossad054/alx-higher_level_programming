@@ -7,16 +7,17 @@ import sys
 import urllib.error
 import urllib.request
 
-
 if __name__ == "__main__":
+    # Get the URL from the command line
     url = sys.argv[1]
 
-## Make a GET request to the URL
-    request = urllib.request.Request(url)
     try:
-        with urllib.request.urlopen(request) as response:
-            print(response.read().decode("ascii"))
-    except urllib.error.HTTPError as e:
-        # Handle HTTP errors and print the HTTP status.
+        # Make a GET request to the URL
+        with request.urlopen(url) as response:
+            # Read and decode the response body
+            print(response.read().decode('utf-8'))
+
+    except error.HTTPError as e:
+        # Handle HTTP errors and print the HTTP status code
         print("Error code: {}".format(e.code))
 
