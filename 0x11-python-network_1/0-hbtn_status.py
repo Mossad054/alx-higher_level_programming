@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" script fetches https://alx-intranet.hbtn.io/status.
+""" script
+-fetches https://alx-intranet.hbtn.io/status.
 - use urlib package
 """
 
@@ -8,8 +9,8 @@ if __name__ == '__main__':
     import urllib.request
 
     with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
-       b_content = response.read()
+       content = response.read()
         print("Body response:")
-        print("\t- type: {}".format(type(b_content)))
-        print("\t- content: {}".format(b_content))
-        print("\t- utf8 content: {}".format(b_content.decode('utf-8')))
+        print("\t- type: {}".format(type(content)))
+        print("\t- content: {}".format(content))
+        print("\t- utf8 content: {}".format(content.decode('utf-8')))
